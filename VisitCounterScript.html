@@ -1,0 +1,20 @@
+<script>
+			// Make a request to your API here
+
+			// Define the URL of the API to be called
+			const apiUrl = '<REST API URL that is connected to Lambda function for counting visitors>';
+
+			// Send a GET request to the API
+			fetch(apiUrl)
+				// Parse the response as JSON
+				.then(response => response.json())
+				// Handle the response data
+				.then(data => {
+					// Get a reference to an HTML element with an ID of "response"
+					const responseEl = document.getElementById('response');
+					// Set the inner HTML of the response element to the response data from the API
+					responseEl.innerHTML = data.body;
+				})
+				// Handle any errors that occur during the request
+				.catch(error => console.error(error));
+	</script>
